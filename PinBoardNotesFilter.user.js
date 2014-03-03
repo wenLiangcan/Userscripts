@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         PinBoard Notes Filter
-// @description  Add a link to your PinBoard notes
+// @description  Add a filter for viewing your PinBoard notes
 // @author       wenLiangcan
 // @version      0.3
 // @namespace    https://github.com/wenLiangcan
