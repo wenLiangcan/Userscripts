@@ -1,4 +1,5 @@
-# My Userscripts
+#Userscripts
+Written by me or modified from others.
 
 ###PinBoard Notes Filter
 **Description**: Add a filter for viewing your PinBoard notes.
