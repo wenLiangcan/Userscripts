@@ -18,3 +18,6 @@ Written by me or modified from others.
 **Description**: Add a backhome button at the top bar.
 
 ![](screenshots/InstapaperBackHomeButton00.png)
+
+###[Hacker News - Open Links in New Tab](/HackerNewsOpenLinksinNewTab.user.js)
+**Description**: None
