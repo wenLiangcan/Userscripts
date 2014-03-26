@@ -16,6 +16,6 @@
 // ==/UserScript==
 
 var items = document.getElementsByClassName('title');
-for (i=1; i<=items.length-1; i+=2) {
+for (i=1; i<items.length; i+=2) {
     items[i].firstElementChild.target = '_blank';
 }
