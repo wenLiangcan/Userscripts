@@ -25,14 +25,14 @@ var main_node;
 var postArr = [];
 
 // if can't find pinboard element, exit
-main_node = document.getElementById("pinboard")
+main_node = document.getElementById("pinboard");
 if (!main_node) {
   return;
 }
 
 // gather up all the bookmarks and fill the postArr
 var bookmarks = fillPostArr();
-if (bookmarks.snapshotLength == 0) {
+if (bookmarks.snapshotLength === 0) {
   // no bookmarks, so exit
   return;
 }

@@ -22,4 +22,4 @@
         var lastFilter = filters[filters.length - 1];
         lastFilter.insertAdjacentHTML('afterend', ' ‧  <a href="' + user + '/from:notes " class="filter ">notes</a>');
     }
-})()
+})();

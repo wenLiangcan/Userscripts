@@ -25,4 +25,4 @@
     var p = cover.parentNode;
     p.insertBefore(a, cover);
     a.appendChild(cover);
-})()
+})();
