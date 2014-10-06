@@ -25,3 +25,6 @@ Description: Let free account users share Feedly articles to Evernote.
 ###[Pinboard - Sort Visible Links(modified)](/PinboardSortVisibleLinksModified.user.js)
 **Description**: A modified version of [Pinboard - Sort Visible Links](http://userscripts.org/scripts/show/114702), compatible with [Pinboard.in bookmarks with favicons](http://userscripts.org/scripts/show/94151).
 
+###[GitHub Toc](/GitHubToc.user.js)
+**Description**: Generate TOC(Table of Content) for Github readme and Github Wiki, Convert from [summerblue/github-toc](https://github.com/summerblue/github-toc).
+
