@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        GithHub Toc
+// @name        GitHub Toc
 // @description Generate TOC(Table of Content) for Github readme and Github Wiki
 // @author      wenLiangcan
 // @version     0.1
