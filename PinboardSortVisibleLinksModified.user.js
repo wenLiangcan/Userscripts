@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pinboard - Sort Visible Links(modified)
 // @namespace http://murklins.talkoncorners.net
-// @description A modified version of Pinboard - Sort Visible Links, compatible with Pinboard.in bookmarks with favicons (http://userscripts.org/scripts/show/94151)
+// @description A modified version of Pinboard - Sort Visible Links, compatible with Pinboard.in bookmarks with favicons
 // @version 0.1
 // @include http://pinboard.in/*
 // @include http://www.pinboard.in/*
