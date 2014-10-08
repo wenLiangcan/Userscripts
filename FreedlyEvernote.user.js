@@ -7,8 +7,8 @@
 // @homepage     https://github.com/wenLiangcan/Userscripts
 // @license      GPL version 3 (http://www.gnu.org/licenses/gpl.txt)
 // @copyright    Copyright © 2014 wenLiangcan
-// @updateURL    http://userscripts.org/scripts/source/438376.user.js
-// @downloadURL  http://userscripts.org/scripts/source/438376.user.js
+// @updateURL
+// @downloadURL
 // @include      https://feedly.com/*
 // @include      http://feedly.com/*
 // @run-at       document-end

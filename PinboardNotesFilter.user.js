@@ -7,8 +7,8 @@
 // @homepage     https://github.com/wenLiangcan/Userscripts
 // @license      GPL version 3 (http://www.gnu.org/licenses/gpl.txt)
 // @copyright    Copyright © 2014 wenLiangcan
-// @updateURL    http://userscripts.org/scripts/source/399525.user.js
-// @downloadURL  http://userscripts.org/scripts/source/399525.user.js
+// @updateURL
+// @downloadURL
 // @include      http://pinboard.in/*
 // @include      https://pinboard.in/*
 // @run-at       document-end
