@@ -28,3 +28,5 @@ Description: Let free account users share Feedly articles to Evernote.
 ###[GitHub Toc](/GitHubToc.user.js)
 **Description**: Generate TOC(Table of Content) for Github readme and Github Wiki, Convert from [summerblue/github-toc](https://github.com/summerblue/github-toc).
 
+###[Yun Pan WAP Redirect](/YunPanWAPRedirect.user.js)
+Description: 重定向百度云盘的 WAP 页面到普通页面.
