@@ -6,7 +6,7 @@
 // @namespace    https://github.com/wenLiangcan
 // @homepage     https://github.com/wenLiangcan/Userscripts
 // @license      GPL version 3 (http://www.gnu.org/licenses/gpl.txt)
-// @copyright    Copyright © 2014 wenLiangcan
+// @copyright    Copyright © 2014-2015 wenLiangcan
 // @updateURL
 // @downloadURL
 // @include      http://*
@@ -16,7 +16,7 @@
 // ==/UserScript==
 
 (function() {
-    if (/^http:\/\/pan\.baidu\.com\/wap\/link\?.*?$/.test(document.URL)) {
+    if (/^http:\/\/(pan|yun)\.baidu\.com\/wap\/link\?.*?$/.test(document.URL)) {
         window.location.href = document.URL.replace('wap', 'share');
     }
     else if (/^http:\/\/pan\.baidu\.com\/wap\/share\/.*?$/.test(document.URL)) {
