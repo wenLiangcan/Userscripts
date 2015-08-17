@@ -2,7 +2,7 @@
 // @name         Yun Pan WAP Redirect
 // @description  重定向百度云盘的 WAP 页面到普通页面
 // @author       wenLiangcan
-// @version      0.1
+// @version      0.2
 // @namespace    https://github.com/wenLiangcan
 // @homepage     https://github.com/wenLiangcan/Userscripts
 // @license      GPL version 3 (http://www.gnu.org/licenses/gpl.txt)
