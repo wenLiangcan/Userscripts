@@ -9,7 +9,6 @@
 // @copyright    Copyright © 2015 wenLiangcan
 // @updateURL
 // @downloadURL
-// @require      http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js
 // @include      http://www.zhihu.com/
 // @include      http://www.zhihu.com/explore
 // @grant        none
@@ -17,81 +16,64 @@
 // ==/UserScript==
 
 (function() {
-    function main() {
-        function addFloatingCollapseButtons(feeds) {
-            feeds.forEach(function(feed) {
-                var collapseButton = feed.find('.collapse').eq(0);
-                var newButton = collapseButton.clone()
-                    .click(function() {
-                        $('html body').animate({
-                            scrollTop: feed.offset().top - 50
-                        }, 300, function() {
-                            collapseButton.trigger('click');
-                        });
-                    })
-                    .css({
-                        position: "relative",
-                        marginTop: "1px",
-                        marginLeft: "0px"
-                    });
+    function getLastItem(arr) {
+        return arr[arr.length - 1];
+    }
+
+    function toArray(obj) {
+        return Array.prototype.slice.call(obj);
+    }
+
+    function addFloatingCollapseButtons(feeds) {
+        feeds.forEach(function(feed) {
+            var collapseButton = getLastItem(feed.getElementsByClassName('collapse'));
+            if (collapseButton !== undefined) {
+                var newButton = collapseButton.cloneNode(true);
+                newButton.onclick = function() {
+                    feed.scrollIntoView(true);
+                    collapseButton.click();
+                };
+                newButton.style.position = 'relative';
+                newButton.style.marginTop = '1px';
+                newButton.style.marginLeft = '0px';
                 try {
-                    feed.find('.zm-votebar').append(newButton);
+                    var votebar = getLastItem(feed.getElementsByClassName('zm-votebar'));
+                    votebar.appendChild(newButton);
                 } catch (e) {
                     console.log(e);
                 }
-            });
-        }
-
-        function getSelectorsBasedOnUrl() {
-            if (/^http:\/\/www\.zhihu\.com\/explore.*?$/.test(document.URL)) {
-                return [
-                    '#js-explore-tab > div:nth-child(4) > div',
-                    '#js-explore-tab > div:nth-child(5) > div'
-                ];
-            } else {
-                return ['#js-home-feed-list'];
             }
-        }
-
-        function observeFeedList(feedList) {
-            var observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    addFloatingCollapseButtons($.makeArray(mutation.addedNodes).map($));
-                });
-            });
-            var observerConfig = {
-                childList: true
-            };
-            observer.observe(feedList, observerConfig);
-        }
-
-        getSelectorsBasedOnUrl().forEach(function(selector) {
-            var feedList = document.querySelector(selector);
-            observeFeedList(feedList);
         });
-
-        addFloatingCollapseButtons((function() {
-            var feeds = [];
-            var feedList = $('.feed-item');
-            for (var i = 0; i < feedList.length; i++) {
-                feeds.push(feedList.eq(i));
-            }
-            return feeds;
-        })());
     }
 
-    // http://skratchdot.com/2013/05/userscripts-and-content-security-policy/
-    var injectViaIframe = function(fn) {
-        var fnName = 'dynamic_fn_' + (new Date()).getTime(),
-            iframe = document.createElement('iframe');
-        iframe.onload = function() {
-            /* jshint evil: true */
-            parent.window[fnName] = new Function('(' + fn.toString() + '());');
-            parent.window[fnName]();
-            parent.document.body.removeChild(iframe);
-        };
-        document.body.appendChild(iframe);
-    };
+    function getSelectorsBasedOnUrl() {
+        if (/^http:\/\/www\.zhihu\.com\/explore.*?$/.test(document.URL)) {
+            return [
+                '#js-explore-tab > div:nth-child(4) > div',
+                '#js-explore-tab > div:nth-child(5) > div'
+            ];
+        } else {
+            return ['#js-home-feed-list'];
+        }
+    }
 
-    injectViaIframe(main);
+    function observeFeedList(feedList) {
+        var observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                addFloatingCollapseButtons(toArray(mutation.addedNodes));
+            });
+        });
+        var observerConfig = {
+            childList: true
+        };
+        observer.observe(feedList, observerConfig);
+    }
+
+    getSelectorsBasedOnUrl().forEach(function(selector) {
+        var feedList = document.querySelector(selector);
+        observeFeedList(feedList);
+    });
+
+    addFloatingCollapseButtons(
+        toArray(document.getElementsByClassName('feed-item')));
 })();
