@@ -13,7 +13,6 @@
 // @include      http://www.zhihu.com/
 // @include      http://www.zhihu.com/explore
 // @run-at       document-end
-// @grant        GM_log
 // ==/UserScript==
 
 (function() {
@@ -37,7 +36,7 @@
                 try {
                     feed.find('.zm-votebar').append(newButton);
                 } catch (e) {
-                    GM_log(e);
+                    console.log(e);
                 }
             });
         }
