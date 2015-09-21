@@ -2,7 +2,7 @@
 // @name         Zhihu Easy Collapse
 // @description  快捷地收起知乎首页的长答案
 // @author       wenLiangcan
-// @version      0.1
+// @version      0.2
 // @namespace    https://github.com/wenLiangcan
 // @homepage     https://github.com/wenLiangcan/Userscripts
 // @license      GPL version 3
