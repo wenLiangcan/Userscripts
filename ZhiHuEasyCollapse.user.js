@@ -2,15 +2,14 @@
 // @name         Zhihu Easy Collapse
 // @description  快捷地收起知乎首页的长答案
 // @author       wenLiangcan
-// @version      0.2
+// @version      0.3
 // @namespace    https://github.com/wenLiangcan
 // @homepage     https://github.com/wenLiangcan/Userscripts
 // @license      GPL version 3
 // @copyright    Copyright © 2015 wenLiangcan
 // @updateURL
 // @downloadURL
-// @include      http://www.zhihu.com/
-// @include      http://www.zhihu.com/explore
+// @match        http://www.zhihu.com/*
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==
@@ -47,14 +46,21 @@
     }
 
     function getSelectorsBasedOnUrl() {
-        if (/^http:\/\/www\.zhihu\.com\/explore.*?$/.test(document.URL)) {
-            return [
+        var selectors = [];
+
+        // explore
+        if (/^http:\/\/www\.zhihu\.com\/explore(\/(#.*?)?)?$/.test(document.URL)) {
+            selectors = [
                 '#js-explore-tab > div:nth-child(4) > div',
                 '#js-explore-tab > div:nth-child(5) > div'
             ];
-        } else {
-            return ['#js-home-feed-list'];
         }
+        // main
+        else if (/^http:\/\/www\.zhihu\.com(\/(#.*?)?)?$/.test(document.URL)) {
+            selectors = ['#js-home-feed-list'];
+        }
+
+        return selectors;
     }
 
     function observeFeedList(feedList) {
