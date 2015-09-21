@@ -12,6 +12,7 @@
 // @require      http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js
 // @include      http://www.zhihu.com/
 // @include      http://www.zhihu.com/explore
+// @grant        none
 // @run-at       document-end
 // ==/UserScript==
 
