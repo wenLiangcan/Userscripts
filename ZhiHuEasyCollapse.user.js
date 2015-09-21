@@ -85,6 +85,7 @@
         var fnName = 'dynamic_fn_' + (new Date()).getTime(),
             iframe = document.createElement('iframe');
         iframe.onload = function() {
+            /* jshint evil: true */
             parent.window[fnName] = new Function('(' + fn.toString() + '());');
             parent.window[fnName]();
             parent.document.body.removeChild(iframe);
