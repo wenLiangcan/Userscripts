@@ -22,7 +22,7 @@
             feeds.forEach(function(feed) {
                 var collapseButton = feed.find('.collapse').eq(0);
                 var newButton = collapseButton.clone()
-                    .on('click', function() {
+                    .click(function() {
                         $('html body').animate({
                             scrollTop: feed.offset().top - 50
                         }, 300, function() {
