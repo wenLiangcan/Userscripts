@@ -10,6 +10,7 @@
 // @updateURL
 // @downloadURL
 // @include      http://movie.douban.com/subject/*
+// @include      https://movie.douban.com/subject/*
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
@@ -33,3 +34,4 @@
     var info = document.getElementById('info');
     info.appendChild(div);
 })();
+
